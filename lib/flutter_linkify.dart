@@ -335,22 +335,11 @@ TextSpan buildTextSpan(
     children: elements.map<InlineSpan>(
       (element) {
         if (element is LinkableElement) {
-          if (useMouseRegion) {
-            return LinkableSpan(
-              mouseCursor: SystemMouseCursors.click,
-              inlineSpan: TextSpan(
-                text: element.text,
-                style: linkStyle,
-                recognizer: onOpen != null ? (TapGestureRecognizer()..onTap = () => onOpen(element)) : null,
-              ),
-            );
-          } else {
-            return TextSpan(
+          return TextSpan(
               text: element.text,
               style: linkStyle,
               recognizer: onOpen != null ? (TapGestureRecognizer()..onTap = () => onOpen(element)) : null,
             );
-          }
         } else {
           return TextSpan(
             text: element.text,
