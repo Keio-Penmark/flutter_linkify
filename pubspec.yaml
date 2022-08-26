@@ -13,6 +13,7 @@ dependencies:
   linkify:
     git:
       url: git@github.com:Keio-Penmark/linkify.git
+      ref: f210948
  
 dev_dependencies:
   pedantic: ^1.11.0
